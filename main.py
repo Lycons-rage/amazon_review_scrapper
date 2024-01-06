@@ -48,7 +48,7 @@ def reviews():
                     heading = "AN AMAZON REVIEW"
                     
                 try:
-                    date = value.div.div.find_all("span")[4].text
+                    date = (value.div.div.find_all("span")[4].text)[21:]
                 except:
                     date = "DATE NOT FOUND"
                     

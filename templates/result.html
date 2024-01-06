@@ -1,1 +1,32 @@
+<html>
+    <head>
+        <title>AMAZON REVIEW SCRAPPER</title>
 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/table_style.css')}}">
+
+    </head>
+    <body>
+    <div class="table-users">
+        <div class="header">REVIEWS</div>
+        <table cellspacing="0">
+            <tr>
+                <th>DATE</th>
+                <th>NAME</th>
+                <th>RATING</th>
+                <th>HEADING</th>
+                <th width="230">REVIEW</th>
+            </tr>
+            
+            {% for value in data %}
+                <tr>
+                    <td>{{value["review date"]}}</td>
+                    <td>{{value["name"]}}</td>
+                    <td>{{value["rating"]}}</td>
+                    <td>{{value["heading"]}}</td>
+                    <td>{{value["details"]}}</td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
